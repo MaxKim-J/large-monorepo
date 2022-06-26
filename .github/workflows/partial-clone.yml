@@ -1,4 +1,4 @@
-name: 너 어딨니
+name: turborepo diff dry run with partial clone
 
 on:
   pull_request:
