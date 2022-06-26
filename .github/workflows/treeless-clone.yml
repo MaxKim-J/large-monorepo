@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  where-are-you:
+  treless-clone-diff:
     name: treeless-clone
     runs-on: ubuntu-latest
     steps:

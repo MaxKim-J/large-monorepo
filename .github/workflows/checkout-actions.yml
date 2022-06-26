@@ -1,4 +1,4 @@
-name: turborepo diff dry run with partial clone
+name: turborepo diff dry run with treeless clone
 
 on:
   pull_request:
@@ -6,17 +6,20 @@ on:
       - main
 
 jobs:
-  partial-clone-diff:
-    name: partial-clone
+  treless-clone-diff:
+    name: treeless-clone
     runs-on: ubuntu-latest
     steps:
+      - name: Action Clone
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
       - name: Partial Clone
         shell: bash
         run: |
           echo ${{ github.head_ref }}
-          git clone --progress --filter=blob:none https://${GITHUB_REPOSITORY_OWNER}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git . 
           echo "비교 기준점이 되는 head $(git rev-parse HEAD)"
           echo "비교 기준점이 되는 head의 -1 $(git rev-parse HEAD~1)"
 
-          git checkout ${{ github.head_ref }}
+          git checkout ${{ github.base_ref }}
           echo "브랜치의 최신 변경 head $(git rev-parse HEAD)"

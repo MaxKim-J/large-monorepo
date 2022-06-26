@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  where-are-you:
+  full-clone-diff:
     name: full-clone
     runs-on: ubuntu-latest
     steps:
