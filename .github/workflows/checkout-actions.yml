@@ -1,4 +1,4 @@
-name: turborepo diff dry run with treeless clone
+name: turborepo diff dry run with actions clone
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   treless-clone-diff:
-    name: treeless-clone
+    name: actions-clone
     runs-on: ubuntu-latest
     steps:
       - name: Action Clone
