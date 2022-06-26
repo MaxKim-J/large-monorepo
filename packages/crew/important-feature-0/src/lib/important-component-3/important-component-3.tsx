@@ -12,6 +12,7 @@ export function ImportantComponent3(props: ImportantComponent3Props) {
   return (
     <div>
       <h1>Welcome to important-component-3!</h1>
+      <h1>뭔가 change</h1>
     </div>
   );
 }
